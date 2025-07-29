@@ -29,4 +29,16 @@ public class MainController {
         }
         return jsonData;
     }
+    @PostMapping("api/special")
+    public String giveSpecialAnimals(@RequestParam String name){
+        animals Anim = new animals(name, "orange",10, "Man Animals");
+        String jsonData = null;
+        try {
+            jsonData = objectMapper.writeValueAsString(Anim);
+        }catch (JsonProcessingException e){
+            System.out.println("Error animals");
+        }
+        return jsonData;
+    }
 }
+
