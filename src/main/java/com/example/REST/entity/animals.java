@@ -1,10 +1,19 @@
 package com.example.REST.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 @Data
+@Entity
+@Table(name= "animals")
 public class animals {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(unique = true)
     private String name;
+
     private String colour;
     private int age;
     private String gender;
